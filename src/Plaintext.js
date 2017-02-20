@@ -25,7 +25,7 @@ const styles = {
   }
 };
 
-// TODO : should be scrollable
+// TODO : should be scrollable (scrollview renders weird right now)
 const Plaintext = ({selectedIndex, characters, selectCharacter}) => (
   <ScrollView>
     <View style={styles.plaintext}>

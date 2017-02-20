@@ -6,7 +6,6 @@ import Cipher from './Cipher';
 import Plaintext from './Plaintext';
 import CipherSelector from './CipherSelector';
 
-// TODO - own repo with better name
 // TODO - allow adding spaces/line breaks
 // TODO - ability to clear current text
 
