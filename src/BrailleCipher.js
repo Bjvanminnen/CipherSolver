@@ -4,7 +4,7 @@ import BrailleCard from './BrailleCard';
 
 const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ#1234567890";
 // TODO - could be dependent on dimensions (or just figure out flex)
-const CARDS_PER_ROW = 7;
+const CARDS_PER_ROW = 6;
 
 const styles = {
   row: {

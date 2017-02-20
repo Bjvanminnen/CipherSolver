@@ -6,7 +6,7 @@ import { setCharacter, highlightedCharacter } from './redux/plaintext';
 const styles = {
   main: {
     backgroundColor: 'white',
-    margin: 5
+    margin: 5,
   },
   focus: {
     borderWidth: 1,
@@ -31,7 +31,7 @@ class CryptoCard extends Component {
 
     this.onPress = this.onPress.bind(this);
   }
-  
+
   onPress() {
     const { character, setCharacter } = this.props;
     setCharacter(character);

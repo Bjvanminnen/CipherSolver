@@ -3,6 +3,8 @@ import { ScrollView, View, TouchableHighlight, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { selectCharacter } from './redux/plaintext';
 
+const LETTER_HEIGHT = 40;
+
 const styles = {
   plaintext: {
     padding: 10,
@@ -13,13 +15,14 @@ const styles = {
     margin: 2,
     padding: 2,
     backgroundColor: 'white',
+    borderWidth: 1,
+    height: LETTER_HEIGHT + 2 * (2 + 1), // account for padding and border
   },
   text: {
     fontFamily: 'Courier New',
-    fontSize: 30
+    fontSize: LETTER_HEIGHT
   },
   selected: {
-    borderWidth: 1,
     borderStyle: 'dashed',
     borderColor: 'black'
   }

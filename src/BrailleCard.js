@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import CryptoCard from './CryptoCard';
 
-const CIRCLE_SIZE = 7;
+const CIRCLE_SIZE = 11;
 
 const Alphabet = {
   A: '100000',
@@ -72,7 +72,8 @@ const styles = {
     flexDirection: 'column'
   },
   text: {
-    color: 'gray'
+    color: 'gray',
+    fontSize: 20
   }
 };
 
@@ -83,8 +84,8 @@ class BrailleCard extends Component {
     return (
       <CryptoCard
         character={character}
-        width={45}
-        height={45}
+        width={55}
+        height={55}
       >
         <View style={styles.contents}>
           <View style={styles.textColumn}>
