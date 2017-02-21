@@ -1,6 +1,7 @@
 export const CipherType = {
   Braille: 'Braille',
-  Morse: 'Morse'
+  Morse: 'Morse',
+  A1Z26: 'A1Z26',
 };
 
 const ciphers = Object.keys(CipherType);

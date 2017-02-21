@@ -5,12 +5,14 @@ import { View, Text } from 'react-native';
 import { CipherType, setCipher } from './redux/cipher';
 import BrailleCipher from './BrailleCipher';
 import MorseCipher from './MorseCipher';
+import A1Z26Cipher from './A1Z26Cipher';
 import Plaintext from './Plaintext';
 import CipherSelector from './CipherSelector';
 
 const typeToComponent = {
   [CipherType.Braille]: BrailleCipher,
   [CipherType.Morse]: MorseCipher,
+  [CipherType.A1Z26]: A1Z26Cipher,
 };
 
 const styles = {

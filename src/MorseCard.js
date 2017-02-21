@@ -48,10 +48,6 @@ const styles = {
     justifyContent: 'flex-start',
     paddingLeft: 5
   },
-  column: {
-    flexDirection: 'column',
-    justifyContent: 'center'
-  },
   text: {
     lineHeight: 30,
     fontSize: 30

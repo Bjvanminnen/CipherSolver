@@ -8,6 +8,8 @@ const styles = {
     backgroundColor: 'white',
     margin: 5,
   },
+  // TODO - this is kind of broken now, but highlighting might not be the right
+  // approach anyways
   focus: {
     borderWidth: 1,
     borderStyle: 'dashed',
@@ -19,7 +21,7 @@ const styles = {
   textColumn: {
     flexDirection: 'column',
     justifyContent: 'center',
-    // TODO - come up with ac olor scheme
+    // TODO - come up with a color scheme
     backgroundColor: '#DDD1E7',
     paddingLeft: 3,
     paddingRight: 3,
