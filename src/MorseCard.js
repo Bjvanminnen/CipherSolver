@@ -45,18 +45,12 @@ const styles = {
   contents: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
+    paddingLeft: 5
   },
   column: {
     flexDirection: 'column',
     justifyContent: 'center'
-  },
-  textColumn: {
-    flexDirection: 'column',
-    marginRight: 4
-  },
-  label: {
-    color: 'gray'
   },
   text: {
     lineHeight: 30,
@@ -72,12 +66,9 @@ const MorseCard = ({character}) => (
   <CryptoCard
     width={80}
     height={30}
-    character={character}    
+    character={character}
   >
     <View style={styles.contents}>
-      <View style={styles.textColumn}>
-        <Text style={styles.label}>{character}</Text>
-      </View>
       <View>
         <Text style={styles.text}>
           {textForChar(character)}

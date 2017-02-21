@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
-import { TouchableHighlight } from 'react-native';
+import { TouchableHighlight, View, Text } from 'react-native';
 import { setCharacter, highlightedCharacter } from './redux/plaintext';
 
 const styles = {
@@ -12,6 +12,24 @@ const styles = {
     borderWidth: 1,
     borderStyle: 'dashed',
     borderColor: 'black'
+  },
+  columns: {
+    flexDirection: 'row',
+  },
+  textColumn: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    // TODO - come up with ac olor scheme
+    backgroundColor: '#DDD1E7',
+    paddingLeft: 3,
+    paddingRight: 3,
+  },
+  text: {
+    fontSize: 20,
+    fontFamily: 'Courier New',
+  },
+  cryptoColumn: {
+    flex: 1
   }
 };
 
@@ -40,6 +58,7 @@ class CryptoCard extends Component {
   render() {
     const { character, highlightedCard, width, height, children } = this.props;
     const hasFocus = character === highlightedCard;
+    const heightStyle = { height };
     return (
       <TouchableHighlight
         style={[
@@ -49,7 +68,14 @@ class CryptoCard extends Component {
         ]}
         onPress={this.onPress}
       >
-        {children}
+        <View style={[styles.columns, heightStyle]}>
+          <View style={[styles.textColumn, heightStyle]}>
+            <Text style={styles.text}>{character}</Text>
+          </View>
+          <View style={styles.cryptoColumn}>
+            {children}
+          </View>
+        </View>
       </TouchableHighlight>
     );
   }

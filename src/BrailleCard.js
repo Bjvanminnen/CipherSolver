@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import CryptoCard from './CryptoCard';
 
 const CIRCLE_SIZE = 11;
@@ -66,14 +66,7 @@ const styles = {
   },
   column: {
     flexDirection: 'column',
-    justifyContent: 'center'
-  },
-  textColumn: {
-    flexDirection: 'column'
-  },
-  text: {
-    color: 'gray',
-    fontSize: 20
+    justifyContent: 'center',
   }
 };
 
@@ -88,9 +81,6 @@ class BrailleCard extends Component {
         height={55}
       >
         <View style={styles.contents}>
-          <View style={styles.textColumn}>
-            <Text style={styles.text}>{character}</Text>
-          </View>
           <View style={styles.column}>
             <BrailleDot filled={dots[0]}/>
             <BrailleDot filled={dots[2]}/>

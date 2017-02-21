@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     // defaults are from my iphone 7 plus
     width: Platform.OS === 'web' ? 414 : width,
     height: Platform.OS === 'web' ? 736 : height,
-    // backgroundColor: '#eeeeee'
+    backgroundColor: '#eeeeee'
   }
 });
 
