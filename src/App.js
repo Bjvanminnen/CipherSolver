@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
   main: {
     marginTop: 20,
     // defaults are from my iphone 7 plus
+    // TODO - handle different resolutions, and also rotations
     width: Platform.OS === 'web' ? 414 : width,
     height: Platform.OS === 'web' ? 736 : height,
     backgroundColor: '#eeeeee'
