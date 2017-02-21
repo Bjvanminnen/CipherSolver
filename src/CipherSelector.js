@@ -22,6 +22,7 @@ const styles = {
 // TODO: Clicking name should give us a dropdown.
 const CipherSelector = ({cipher, incrementCipher, decrementCipher}) => (
   <View style={styles.main}>
+    {/*
     <TouchableHighlight
       onPress={decrementCipher}
     >
@@ -31,9 +32,11 @@ const CipherSelector = ({cipher, incrementCipher, decrementCipher}) => (
         {"<"}
       </Text>
     </TouchableHighlight>
+    */}
     <Text style={styles.label}>
       {cipher}
     </Text>
+    {/*
     <TouchableHighlight
       onPress={incrementCipher}
     >
@@ -43,9 +46,8 @@ const CipherSelector = ({cipher, incrementCipher, decrementCipher}) => (
         {">"}
       </Text>
     </TouchableHighlight>
+    */}
   </View>
 );
 
-export default connect(state => ({
-  cipher: cipherTypeFromIndex(state.cipher)
-}), { incrementCipher, decrementCipher })(CipherSelector);
+export default connect(null, { incrementCipher, decrementCipher })(CipherSelector);
