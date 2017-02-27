@@ -7,9 +7,7 @@ const styles = {
   }
 };
 
-const defaultCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-
-const CipherCardSet = ({ characters=defaultCharacters, cardsPerRow, CardComponent }) => {
+const CipherCardSet = ({ characters, cardsPerRow, CardComponent }) => {
 
   let ungrouped = characters.split('');
   const grouped = [];

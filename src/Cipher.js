@@ -3,16 +3,29 @@ import { connect } from 'react-redux';
 import Swiper from 'react-native-swiper';
 import { View, Text } from 'react-native';
 import { CipherType, setCipher } from './redux/cipher';
-import BrailleCipher from './BrailleCipher';
-import MorseCipher from './MorseCipher';
-import A1Z26Cipher from './A1Z26Cipher';
+import CipherCardSet from './CipherCardSet';
+import BrailleCard from './BrailleCard';
+import MorseCard from './MorseCard';
+import A1Z26Card from './A1Z26Card';
 import Plaintext from './Plaintext';
 import CipherSelector from './CipherSelector';
 
-const typeToComponent = {
-  [CipherType.Braille]: BrailleCipher,
-  [CipherType.Morse]: MorseCipher,
-  [CipherType.A1Z26]: A1Z26Cipher,
+const typeToProps = {
+  [CipherType.Braille]: {
+    characters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ#1234567890",
+    cardsPerRow: 6,
+    CardComponent: BrailleCard
+  },
+  [CipherType.Morse]: {
+    characters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+    cardsPerRow: 4,
+    CardComponent: MorseCard
+  },
+  [CipherType.A1Z26]: {
+    characters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    cardsPerRow: 6,
+    CardComponent: A1Z26Card
+  },
 };
 
 const styles = {
@@ -29,14 +42,13 @@ const Cipher = ({setCipher}) => (
       setCipher(state.index);
     }}
   >
-    {Object.keys(typeToComponent).map((type, index) => {
-      const Component = typeToComponent[type];
+    {Object.keys(typeToProps).map((type, index) => {
       return (
         <View
           key={index}
         >
           <CipherSelector cipher={type}/>
-          <Component/>
+          <CipherCardSet {...typeToProps[type]}/>
           <Plaintext/>
         </View>
       );
