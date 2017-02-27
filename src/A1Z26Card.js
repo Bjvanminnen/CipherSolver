@@ -43,6 +43,8 @@ const styles = {
     justifyContent: 'center'
   },
   text: {
+    // TODO: For some reason this renders at 36 px on simulator unless you muck
+    // with accessibility settings.
     fontSize: 30
   }
 };
