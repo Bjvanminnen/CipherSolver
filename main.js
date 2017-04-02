@@ -6,5 +6,7 @@
 
 import { AppRegistry } from 'react-native';
 import App from './src/App';
+import Expo from 'expo';
 
-AppRegistry.registerComponent('CipherSolver', () => App);
+// AppRegistry.registerComponent('CipherSolver', () => App);
+Expo.registerRootComponent(App);
