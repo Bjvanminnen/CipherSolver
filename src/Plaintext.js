@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, View, TouchableHighlight, Text } from 'react-native';
+import { ScrollView, View, TouchableHighlight, Text, Platform } from 'react-native';
 import { connect } from 'react-redux';
 import { selectCharacter } from './redux/plaintext';
 
@@ -19,7 +19,7 @@ const styles = {
     height: LETTER_HEIGHT + 2 * (2 + 1), // account for padding and border
   },
   text: {
-    fontFamily: 'Courier New',
+    fontFamily: Platform.OS === 'ios' ? 'Courier New' : 'monospace',
     fontSize: LETTER_HEIGHT
   },
   selected: {

@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
-import { TouchableHighlight, View, Text } from 'react-native';
+import { TouchableHighlight, View, Text, Platform } from 'react-native';
 import { setCharacter, highlightedCharacter } from './redux/plaintext';
 
 const styles = {
@@ -28,7 +28,7 @@ const styles = {
   },
   text: {
     fontSize: 20,
-    fontFamily: 'Courier New',
+    fontFamily: Platform.OS === 'ios' ? 'Courier New' : 'monospace',
   },
   cryptoColumn: {
     flex: 1
