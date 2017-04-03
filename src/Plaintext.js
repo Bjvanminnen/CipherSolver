@@ -19,7 +19,7 @@ const styles = {
     height: LETTER_HEIGHT + 2 * (2 + 1), // account for padding and border
   },
   text: {
-    fontFamily: Platform.OS === 'ios' ? 'Courier New' : 'monospace',
+    fontFamily: 'overpass-mono',
     fontSize: LETTER_HEIGHT
   },
   selected: {

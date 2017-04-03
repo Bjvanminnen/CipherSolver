@@ -27,8 +27,8 @@ const styles = {
     paddingRight: 3,
   },
   text: {
-    fontSize: 20,
-    fontFamily: Platform.OS === 'ios' ? 'Courier New' : 'monospace',
+    fontSize: 20,    
+    fontFamily: 'overpass-mono'
   },
   cryptoColumn: {
     flex: 1
