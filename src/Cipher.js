@@ -13,25 +13,16 @@ import CipherSelector from './CipherSelector';
 const typeToProps = {
   [CipherType.Braille]: {
     characters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ#1234567890",
-    cardsPerRow: 6,
     CardComponent: BrailleCard
   },
   [CipherType.Morse]: {
     characters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
-    cardsPerRow: 4,
     CardComponent: MorseCard
   },
   [CipherType.A1Z26]: {
     characters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-    cardsPerRow: 6,
     CardComponent: A1Z26Card
   },
-};
-
-const styles = {
-  view: {
-    backgroundColor: 'lightblue'
-  }
 };
 
 const Cipher = ({setCipher}) => (
@@ -42,17 +33,15 @@ const Cipher = ({setCipher}) => (
       setCipher(state.index);
     }}
   >
-    {Object.keys(typeToProps).map((type, index) => {
-      return (
-        <View
-          key={index}
-        >
-          <CipherSelector cipher={type}/>
-          <CipherCardSet {...typeToProps[type]}/>
-          <Plaintext/>
-        </View>
-      );
-    })}
+    {Object.keys(typeToProps).map((type, index) => (
+      <View
+        key={index}
+      >
+        <CipherSelector cipher={type}/>
+        <CipherCardSet {...typeToProps[type]}/>
+        <Plaintext/>
+      </View>
+    ))}
   </Swiper>
 );
 
