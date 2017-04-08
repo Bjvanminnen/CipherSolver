@@ -9,6 +9,9 @@ export const clearString = () => ({ type: CLEAR_STRING });
 export const SELECT_CHARACTER = 'plaintext/SELECT_CHARACTER';
 export const selectCharacter = (index, char) => ({ type: SELECT_CHARACTER, index, char });
 
+export const DELETE_CHARACTER = 'plaintext/DELETE_CHARACTER';
+export const deleteCharacter = () => ({ type: DELETE_CHARACTER });
+
 const initialState = {
   letters: List(' '),
   selectedIndex: 0
@@ -31,6 +34,24 @@ export default function plaintext(state = initialState, action) {
       };
     }
   }
+
+  if (action.type === DELETE_CHARACTER) {
+    if (state.letters.size <= 1) {
+      return state;
+    }
+
+    let deleteAt = state.selectedIndex;
+    if (deleteAt === state.letters.size - 1) {
+      // if we at last character, delete previous one
+      deleteAt -= 1;
+    }
+    return {
+      ...state,
+      letters: state.letters.delete(deleteAt),
+      selectedIndex: state.letters.size - 2
+    };
+  }
+
   if (action.type === CLEAR_STRING) {
     return [];
   }

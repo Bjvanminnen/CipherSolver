@@ -14,12 +14,20 @@ const styles = {
 
 const CipherCardSet = ({ characters, CardComponent }) => (
   <View style={styles.main}>
-    {characters.split('').concat('_').map((char, index) => (
+    {characters.split('').map((char, index) => (
       <CardComponent
         key={index}
         character={char}
       />
     ))}
+    <CardComponent
+      key="space"
+      character="_"
+    />
+    <CardComponent
+      key="delete"
+      character="<"
+    />
   </View>
 );
 

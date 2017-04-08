@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { TouchableHighlight, View, Text, Platform } from 'react-native';
-import { setCharacter, highlightedCharacter } from './redux/plaintext';
+import { setCharacter, deleteCharacter, highlightedCharacter } from './redux/plaintext';
 
 const styles = {
   main: {
@@ -56,8 +56,12 @@ class CryptoCard extends Component {
   }
 
   onPress() {
-    const { character, setCharacter } = this.props;
-    setCharacter(character);
+    const { character, setCharacter, deleteCharacter } = this.props;
+    if (character === '<') {
+      deleteCharacter();
+    } else {
+      setCharacter(character);
+    }
   }
 
   render() {
@@ -94,4 +98,4 @@ class CryptoCard extends Component {
 
 export default connect(state => ({
   highlightedCard: highlightedCharacter(state.plaintext)
-}), { setCharacter })(CryptoCard);
+}), { setCharacter, deleteCharacter })(CryptoCard);

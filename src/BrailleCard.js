@@ -73,7 +73,7 @@ const styles = {
 class BrailleCard extends Component {
   render() {
     const { character } = this.props;
-    if (character === '_') {
+    if (!Alphabet[character]) {
       return (
         <CryptoCard
           character={character}
