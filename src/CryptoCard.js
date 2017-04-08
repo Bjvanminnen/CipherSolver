@@ -5,15 +5,14 @@ import { setCharacter, highlightedCharacter } from './redux/plaintext';
 
 const styles = {
   main: {
-    backgroundColor: 'white',
+    backgroundColor: 'lightgray',
     margin: 5,
   },
-  // TODO - this is kind of broken now, but highlighting might not be the right
-  // approach anyways
   focus: {
-    borderWidth: 1,
-    borderStyle: 'dashed',
-    borderColor: 'black'
+    backgroundColor: 'white',
+  },
+  textFocus: {
+    backgroundColor: '#a290ab'
   },
   columns: {
     flexDirection: 'row',
@@ -22,13 +21,17 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'center',
     // TODO - come up with a color scheme
-    backgroundColor: '#DDD1E7',
+    backgroundColor: '#5f1679', //'#DDD1E7',
     paddingLeft: 3,
     paddingRight: 3,
   },
   text: {
-    fontSize: 20,    
-    fontFamily: 'overpass-mono'
+    fontSize: 20,
+    // same weird thing around line height as in App.js
+    lineHeight: 26,
+    height: 20,
+    fontFamily: 'overpass-mono',
+    color: 'white'
   },
   cryptoColumn: {
     flex: 1
@@ -65,13 +68,19 @@ class CryptoCard extends Component {
       <TouchableHighlight
         style={[
           styles.main,
-          (hasFocus && styles.focus),
+          hasFocus && styles.focus,
           { width, height }
         ]}
         onPress={this.onPress}
       >
         <View style={[styles.columns, heightStyle]}>
-          <View style={[styles.textColumn, heightStyle]}>
+          <View
+            style={[
+              styles.textColumn,
+              (hasFocus && styles.textFocus),
+              heightStyle
+            ]}
+          >
             <Text style={styles.text}>{character}</Text>
           </View>
           <View style={styles.cryptoColumn}>

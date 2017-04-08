@@ -14,7 +14,7 @@ const styles = {
   touchable: {
     margin: 2,
     padding: 2,
-    backgroundColor: 'white',
+    backgroundColor: 'lightgray',
     borderWidth: 1,
     height: LETTER_HEIGHT + 2 * (2 + 1), // account for padding and border
   },
@@ -28,8 +28,7 @@ const styles = {
     lineHeight: 54
   },
   selected: {
-    borderStyle: 'dashed',
-    borderColor: 'black'
+    backgroundColor: 'white'
   }
 };
 
