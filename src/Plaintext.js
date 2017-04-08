@@ -20,7 +20,12 @@ const styles = {
   },
   text: {
     fontFamily: 'overpass-mono',
-    fontSize: LETTER_HEIGHT
+    fontSize: LETTER_HEIGHT,
+    height: LETTER_HEIGHT,
+    // lineHeight of LETTER_HEIGHT doesn't work properly for some reason, perhaps
+    // related the the link below.
+    // http://stackoverflow.com/questions/5414730/custom-installed-font-not-displayed-correctly-in-uilabel
+    lineHeight: 54
   },
   selected: {
     borderStyle: 'dashed',
