@@ -58,11 +58,13 @@ const A1Z26Card = ({character}) => (
     character={character}
   >
     <View style={styles.contents}>
-      <View style={styles.column}>
-        <Text style={styles.text}>
-          {textForChar(character)}
-        </Text>
-      </View>
+      {textForChar(character) &&
+        <View style={styles.column}>
+          <Text style={styles.text}>
+            {textForChar(character)}
+          </Text>
+        </View>
+      }
     </View>
   </CryptoCard>
 );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
+import CryptoCard from './CryptoCard';
 
 const styles = {
   main: {
@@ -13,7 +14,7 @@ const styles = {
 
 const CipherCardSet = ({ characters, CardComponent }) => (
   <View style={styles.main}>
-    {characters.split('').map((char, index) => (
+    {characters.split('').concat('_').map((char, index) => (
       <CardComponent
         key={index}
         character={char}

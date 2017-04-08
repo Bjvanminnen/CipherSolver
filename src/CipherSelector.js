@@ -19,34 +19,11 @@ const styles = {
   }
 };
 
-// TODO: Clicking name should give us a dropdown.
 const CipherSelector = ({cipher, incrementCipher, decrementCipher}) => (
   <View style={styles.main}>
-    {/*
-    <TouchableHighlight
-      onPress={decrementCipher}
-    >
-      <Text
-        style={styles.button}
-      >
-        {"<"}
-      </Text>
-    </TouchableHighlight>
-    */}
     <Text style={styles.label}>
       {cipher}
-    </Text>
-    {/*
-    <TouchableHighlight
-      onPress={incrementCipher}
-    >
-      <Text
-        style={styles.button}
-      >
-        {">"}
-      </Text>
-    </TouchableHighlight>
-    */}
+    </Text>    
   </View>
 );
 

@@ -5,7 +5,7 @@ import getStore from './redux';
 import Cipher from './Cipher';
 import { Font } from 'expo';
 
-// TODO - allow adding spaces/line breaks
+// TODO - allow adding line breaks
 // TODO - ability to clear current text
 
 // TODO - android issues

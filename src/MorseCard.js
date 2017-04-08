@@ -54,9 +54,13 @@ const styles = {
   }
 };
 
-const textForChar = character => (
-  (Alphabet[character]).split('').map(x => x === '0' ? '.' : '-').join('')
-);
+const textForChar = character => {
+  const value = Alphabet[character];
+  if (!value) {
+    return;
+  }
+  return value.split('').map(x => x === '0' ? '.' : '-').join('')
+};
 
 const MorseCard = ({character}) => (
   <CryptoCard
@@ -64,13 +68,15 @@ const MorseCard = ({character}) => (
     height={30}
     character={character}
   >
-    <View style={styles.contents}>
-      <View>
-        <Text style={styles.text}>
-          {textForChar(character)}
-        </Text>
+    {textForChar(character) &&
+      <View style={styles.contents}>
+        <View>
+          <Text style={styles.text}>
+            {textForChar(character)}
+          </Text>
+        </View>
       </View>
-    </View>
+    }
   </CryptoCard>
 );
 
