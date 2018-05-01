@@ -1,8 +1,8 @@
 {
-  "expoServerPort": 19000,
-  "packagerPort": 19002,
-  "packagerPid": 26554,
-  "expoServerNgrokUrl": "https://dy-x4x.bjvanminnen.ciphersolver.exp.direct",
-  "packagerNgrokUrl": "https://packager.dy-x4x.bjvanminnen.ciphersolver.exp.direct",
-  "ngrokPid": 26649
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
