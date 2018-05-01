@@ -28,6 +28,10 @@ const CipherCardSet = ({ characters, CardComponent }) => (
       key="delete"
       character="<"
     />
+    <CardComponent
+      key="clear"
+      character={'\u21e4'}
+    />
   </View>
 );
 

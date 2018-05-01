@@ -6,11 +6,14 @@ export const setCharacter = character => ({type: SET_CHARACTER, character});
 const CLEAR_STRING = 'plaintext/CLEAR_STRING';
 export const clearString = () => ({ type: CLEAR_STRING });
 
-export const SELECT_CHARACTER = 'plaintext/SELECT_CHARACTER';
+const SELECT_CHARACTER = 'plaintext/SELECT_CHARACTER';
 export const selectCharacter = (index, char) => ({ type: SELECT_CHARACTER, index, char });
 
-export const DELETE_CHARACTER = 'plaintext/DELETE_CHARACTER';
+const DELETE_CHARACTER = 'plaintext/DELETE_CHARACTER';
 export const deleteCharacter = () => ({ type: DELETE_CHARACTER });
+
+const DELETE_STRING = 'plaintext/DELETE_STRING';
+export const deleteString = () => ({ type: DELETE_STRING });
 
 const initialState = {
   letters: List(' '),
@@ -50,6 +53,10 @@ export default function plaintext(state = initialState, action) {
       letters: state.letters.delete(deleteAt),
       selectedIndex: state.letters.size - 2
     };
+  }
+
+  if (action.type === DELETE_STRING) {
+    return initialState;
   }
 
   if (action.type === CLEAR_STRING) {
