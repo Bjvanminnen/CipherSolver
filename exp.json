@@ -3,7 +3,7 @@
   "description": "CipherSolver",
   "slug": "CipherSolver",
   "privacy": "public",
-  "sdkVersion": "17.0.0",
+  "sdkVersion": "20.0.0",
   "version": "1.0.0",
   "orientation": "portrait",
   "primaryColor": "#cccccc",
